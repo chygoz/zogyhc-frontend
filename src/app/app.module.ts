@@ -1,25 +1,42 @@
-import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app.routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from "./shared/shared.module";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { ContentLayoutComponent } from "./layouts/content/content-layout.component";
+import { FullLayoutComponent } from "./layouts/full/full-layout.component";
+
+import { AuthService } from './shared/auth/auth.service';
+import { AuthGuard } from './shared/auth/auth-guard.service';
+
+import * as $ from 'jquery';
+import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 
+
+
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    AboutUsComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        FullLayoutComponent,
+        ContentLayoutComponent,
+        RegisterComponent,
+        HomeComponent
+    ],
+    imports: [
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        SharedModule,
+        NgbModule.forRoot()
+    ],
+    providers: [
+        AuthService,
+        AuthGuard
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
