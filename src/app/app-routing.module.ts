@@ -9,20 +9,18 @@ import { CONTENT_ROUTES } from "./shared/routes/content-layout.routes";
 
 import { AuthGuard } from './shared/auth/auth-guard.service';
 import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
-  {
-    path: '',
-    redirectTo: 'full-layout',
-    pathMatch: 'full',
-  },
-  { path: '', component: FullLayoutComponent, data: { title: 'full Views' }, children: Full_ROUTES, canActivate: [AuthGuard] },
-  { path: '', component: ContentLayoutComponent, data: { title: 'content Views' }, children: CONTENT_ROUTES, canActivate: [AuthGuard] },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: { title: 'Register' }
-  }
+  // {
+  //   path: '',
+  //   redirectTo: 'full-layout',
+  //   pathMatch: 'full',
+  // },
+  // { path: '', component: FullLayoutComponent, data: { title: 'full Views' }, children: Full_ROUTES, canActivate: [AuthGuard] },
+  // { path: '', component: ContentLayoutComponent, data: { title: 'content Views' }, children: CONTENT_ROUTES, canActivate: [AuthGuard] },
+  {path: '', component: HomeComponent},
+  { path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
