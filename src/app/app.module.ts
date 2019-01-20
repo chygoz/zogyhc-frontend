@@ -15,6 +15,7 @@ import { AuthGuard } from './shared/auth/auth-guard.service';
 import * as $ from 'jquery';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 
@@ -25,7 +26,8 @@ import { HomeComponent } from './home/home.component';
         FullLayoutComponent,
         ContentLayoutComponent,
         RegisterComponent,
-        HomeComponent
+        HomeComponent,
+        AboutusComponent
     ],
     imports: [
         BrowserAnimationsModule,
