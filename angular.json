@@ -31,7 +31,8 @@
               "src/assets/icon_fonts/css/all_icons.min.css"
             ],
             "scripts": [
-              "src/assets/js/jquery-2.2.4.min.js"
+              "src/assets/js/jquery-2.2.4.min.js",
+              "node_modules/jquery/src/jquery.js"
             ]
           },
           "configurations": {
