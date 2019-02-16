@@ -15,7 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { AdmissionComponent } from './admission/admission.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatStepperModule, MatInputModule } from '@angular/material';
-
+import { OwlModule } from 'ngx-owl-carousel';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { MatStepperModule, MatInputModule } from '@angular/material';
     MatStepperModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OwlModule
   ],
   providers: [LayoutService],
   bootstrap: [AppComponent]
