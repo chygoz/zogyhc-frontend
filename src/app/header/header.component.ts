@@ -26,8 +26,6 @@ export class HeaderComponent implements OnInit {
     //   this.classList.toggle('is-active');
     // }
 
-    /* throwing together a liitle stab in the dark*/
-
     if (typeof window !== undefined) {
       window.addEventListener('scroll', () => this._checkScroll());
     }
