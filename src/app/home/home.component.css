@@ -1,3 +1,17 @@
 .tr,.tr2{background: #28415f;}
 .tr1{background: #31547c}
 .txt{text-transform: uppercase}
+.tr,.tr1,.tr2{padding: 0px}
+.wow.tr a,.wow.tr1 a,.wow.tr2 a{padding: 30px;margin: 0px}
+.btn_1.rounded{background: #f5c623;}
+.box_grid ul{display: inline-block;text-align: right;width: 100%;margin: 0;padding: 30px 15px}
+.box_grid ul li a{border: 2px solid #989898;color: #505050;}
+#reccomended .owl-item{transform:scale(0.75);}
+main{background: #fff}
+.box_1{background:rgba(47,54,82,0.85);color: #fff;}
+.btn_1.rounded{color: #4b4b4a}
+.full_width{width:100%;}
+.text-center{text-align: center}
+.bitmap1{width:100px}
+.bitmap{width:175px}
+.mt-38{margin-top:38px;}

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject,HostBinding } from '@angular/core';
 import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import * as $ from 'jquery';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  @HostBinding('class.fixed') navIsFixed: boolean;
   constructor() { 
 
   }
@@ -24,8 +25,28 @@ export class HeaderComponent implements OnInit {
     // hamburgers.addEventListener('click', function() {
     //   this.classList.toggle('is-active');
     // }
-   
+
+    /* throwing together a liitle stab in the dark*/
+
+    if (typeof window !== undefined) {
+      window.addEventListener('scroll', () => this._checkScroll());
+    }
+    
   }
+
+  private _checkScroll() {
+    if (typeof window !== undefined) {
+      this.navIsFixed = (window.pageYOffset > 50);
+    }
+  }
+
+  ngOnDestroy() {
+    if (typeof window !== undefined) {
+      window.removeEventListener('scroll', () => this._checkScroll());
+    }
+  }
+ 
+
   status: boolean = false;
   toggleclick(){
     this.status = !this.status;       

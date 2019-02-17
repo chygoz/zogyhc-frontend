@@ -1,3 +1,9 @@
-.header {
+/* .header {
     background-color: #213d64;
-}
+} */
+header{padding: 0;}
+.header{background: none;position: fixed;transition: all 0.6s;}
+.header.fixed{/*background: linear-gradient(to right, rgb(8, 33, 60), #392779)*/background: #213d64}
+ul#top_menu{margin: 0;padding-right: 45px}
+ul#top_menu li a {font-size: 18px;padding: 45px 0;display: inline-block;}
+ul#top_menu li a.btn_1{padding: 13px 30px !important}
