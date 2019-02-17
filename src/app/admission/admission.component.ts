@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { LayoutService } from '../helper/layoutService';
 
 @Component({
   selector: 'app-admission',
@@ -12,8 +11,7 @@ export class AdmissionComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder, public layoutService: LayoutService) {
-    this.layoutService.setStaus(false);
+  constructor(private _formBuilder: FormBuilder) {
   }
 
   ngOnInit() {

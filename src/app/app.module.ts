@@ -10,12 +10,13 @@ import { HomeComponent } from './home/home.component';
 import { ClassroomComponent } from './classroom/classroom.component';
 import {ScrollToModule} from 'ng2-scroll-to';
 import { LoginComponent } from './login/login.component';
-import { LayoutService } from './helper/layoutService';
 import { RegisterComponent } from './register/register.component';
 import { AdmissionComponent } from './admission/admission.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatStepperModule, MatInputModule } from '@angular/material';
 import { OwlModule } from 'ngx-owl-carousel';
+import { LayoutComponent } from './layout/layout.component';
+import { CanActivateLayout } from './layout/layout.canactivate';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { OwlModule } from 'ngx-owl-carousel';
     ClassroomComponent,
     LoginComponent,
     RegisterComponent,
-    AdmissionComponent
+    AdmissionComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,7 @@ import { OwlModule } from 'ngx-owl-carousel';
     ReactiveFormsModule,
     OwlModule
   ],
-  providers: [LayoutService],
+  providers: [CanActivateLayout],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

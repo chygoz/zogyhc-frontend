@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LayoutService } from '../helper/layoutService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,11 +8,14 @@ import { LayoutService } from '../helper/layoutService';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public layoutService: LayoutService) { 
-    this.layoutService.setStaus(false);
-  }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  tempLogin(){
+    localStorage.setItem('loggedin','true');
+    this.router.navigateByUrl('/');
   }
 
 }

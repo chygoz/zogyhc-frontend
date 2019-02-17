@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LayoutService } from '../helper/layoutService';
 
 @Component({
   selector: 'app-register',
@@ -8,9 +7,7 @@ import { LayoutService } from '../helper/layoutService';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(public layoutService: LayoutService) { 
-    this.layoutService.setStaus(false);
-  }
+  constructor() { }
 
   ngOnInit() {
   }
