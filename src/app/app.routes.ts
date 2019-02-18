@@ -32,7 +32,7 @@ const AppRoutes: Routes = [
     { path: 'admission', component: AdmissionComponent },
     { path: 'aboutus', component: AboutUsComponent },
     { path: 'classroom', component: ClassroomComponent },
-    { path: '**', component: HomeComponent },
+    { path: '**', component: LoginComponent },
 ];
 
 export const AppRoutingModule = RouterModule.forRoot(AppRoutes, { useHash: true });
