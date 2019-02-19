@@ -1,4 +1,5 @@
 import { Component, OnInit,Inject,HostBinding } from '@angular/core';
+import { Router } from '@angular/router';
 import * as $ from 'jquery';
 
 
@@ -8,9 +9,10 @@ import * as $ from 'jquery';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  public isloggedin : any;
   @HostBinding('class.fixed') navIsFixed: boolean;
-  constructor() { 
-
+  constructor(private router: Router) { 
+    this.isloggedin = localStorage.getItem('loggedin');
   }
 
   ngOnInit() {
@@ -48,6 +50,11 @@ export class HeaderComponent implements OnInit {
   status: boolean = false;
   toggleclick(){
     this.status = !this.status;       
+}
+
+logout(){
+  localStorage.clear();
+  this.router.navigateByUrl('/login');
 }
 
 }

@@ -17,6 +17,7 @@ import { MatStepperModule, MatInputModule } from '@angular/material';
 import { OwlModule } from 'ngx-owl-carousel';
 import { LayoutComponent } from './layout/layout.component';
 import { CanActivateLayout } from './layout/layout.canactivate';
+import { ConfigService } from './helper/configservice';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { CanActivateLayout } from './layout/layout.canactivate';
     ReactiveFormsModule,
     OwlModule
   ],
-  providers: [CanActivateLayout],
+  providers: [CanActivateLayout,ConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

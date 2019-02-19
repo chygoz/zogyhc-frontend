@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   tempLogin(){
     localStorage.setItem('loggedin','true');
     this.router.navigateByUrl('/');
+    
   }
 
 }

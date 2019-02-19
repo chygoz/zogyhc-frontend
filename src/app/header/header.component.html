@@ -3,7 +3,8 @@
     <a href="index.html"><img src="assets/img/CHOL-LOGO2.png"  data-retina="true" alt=""></a>
   </div>
   <ul id="top_menu">
-    <li><a href="login.html" class="login">Login</a></li>
+    <li *ngIf="isloggedin == 'false' "><a class="login" [routerLink]="['/login']">Login</a></li>
+    <li *ngIf="isloggedin == 'true' "><a class="login" (click)="logout()">Logout</a></li>
     <li><a href="Tutors.html" class="hidden_tablet">Tutors</a></li>
       <li><a href="#0" class="search-overlay-menu-btn">Search</a></li>
 
