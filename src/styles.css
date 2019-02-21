@@ -68,6 +68,8 @@ Author URI: http://themeforest.net/user/Ansonika/
 @media(min-width:320px) and (max-width:767px){
   .owl-carousel.owl-loaded { margin: 0}
 }
+body{font-family: 'Poppins', sans-serif;}
+
 #preloader {
     position: fixed;
     top: 0;
@@ -592,7 +594,7 @@ Author URI: http://themeforest.net/user/Ansonika/
     display: inline-block;
     margin: 0;
     text-transform: uppercase;
-    font-weight: 600;
+    /* font-weight: 600; */
     letter-spacing: 2px;
     line-height: 1;
     margin-right: 20px;
@@ -614,6 +616,7 @@ Author URI: http://themeforest.net/user/Ansonika/
   }
   ul#top_menu li a {
     color: #fff;
+    font-size: 16px
   }
   ul#top_menu li a:hover {
     color: #fff;
@@ -1475,8 +1478,9 @@ Author URI: http://themeforest.net/user/Ansonika/
     content:""
   }
   .hero_single .wrapper {
-    background-color: #632c8d;
-    background-color: rgba(102, 45, 145, 0.8);
+    /* background-color: #632c8d;
+    background-color: rgba(102, 45, 145, 0.8); */
+    background: rgba(43, 43, 43, 0.8);
   }
   .hero_single.start_bg_zoom:before {
     animation: pop-in 5s 0.3s cubic-bezier(0, 0.5, 0, 1) forwards;
@@ -1537,8 +1541,9 @@ Author URI: http://themeforest.net/user/Ansonika/
     height: 600px;
   }
   .hero_single.version_2 {
-    height: 600px;
+    height: 715px;
   }
+  .mt-spl{margin-top: 265px}
   @media (max-width: 767px) {
     .hero_single.version_2 {
       height: 450px;
@@ -1561,7 +1566,7 @@ Author URI: http://themeforest.net/user/Ansonika/
   } */
   .hero_single.version_2 .wrapper h3 {
     font-size: 42px;
-    font-size: 2.625rem;
+    font-size: 3.825rem;
   }
   @media (max-width: 767px) {
     .hero_single.version_2 .wrapper h3 {
@@ -1580,11 +1585,19 @@ Author URI: http://themeforest.net/user/Ansonika/
     margin: 5px 0 0 0;
     padding: 0;
     font-size: 21px;
-    font-size: 1.3125rem;
+    font-size: 2.5125rem;
+    letter-spacing: 2px;
   }
+  .owl-item.active.center small {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.owl-item.active.center p{font-size: 16px}
   .hero_single.version_2 .wrapper p strong {
     font-weight: 600;
   }
+
   @media (max-width: 767px) {
     .hero_single.version_2 .wrapper p {
       padding: 0;
@@ -3090,10 +3103,10 @@ Author URI: http://themeforest.net/user/Ansonika/
     -ms-border-radius: 30px;
     border-radius: 30px;
   }
-  .box_grid ul li:last-child a:hover {
+  /* .box_grid ul li:last-child a:hover {
     background: #662d91;
     color: #fff;
-  }
+  } */
   
   .rating i {
     margin-right: 2px;

@@ -2,7 +2,8 @@
 .tr1{background: #31547c}
 .txt{text-transform: uppercase}
 .tr,.tr1,.tr2{padding: 0px}
-.wow.tr a,.wow.tr1 a,.wow.tr2 a{padding: 30px;margin: 0px}
+.wow.tr a,.wow.tr1 a,.wow.tr2 a{padding: 90px 0;margin: 0px;text-align: center}
+.txt,.txt2{font-weight: 600;color: #fff;}
 .btn_1.rounded{background: #f5c623;}
 .box_grid ul{display: inline-block;text-align: right;width: 100%;margin: 0;padding: 30px 15px}
 .box_grid ul li a{border: 2px solid #989898;color: #505050;}
@@ -15,3 +16,5 @@ main{background: #fff}
 .bitmap1{width:100px}
 .bitmap{width:175px}
 .mt-38{margin-top:38px;}
+.owl-item.active.center .box_grid ul li a{border: 2px solid #f5c623;color: #fff;}
+ .box_grid ul li:last-child a:hover {background: #f5c623;color: #fff;border: 2px solid #f5c623;}
