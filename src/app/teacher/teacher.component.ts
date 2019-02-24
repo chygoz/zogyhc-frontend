@@ -12,7 +12,7 @@ export class TeacherComponent implements OnInit {
   @ViewChild('canvas') public canvas: ElementRef;
 
   @Input() public width = 1170;
-  @Input() public height = 400;
+  @Input() public height = 550;
 
   constructor(private teacherService: teacherWebSocketService) { 
 

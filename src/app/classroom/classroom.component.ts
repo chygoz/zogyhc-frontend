@@ -13,7 +13,7 @@ export class ClassroomComponent implements AfterViewInit {
   @ViewChild('classroom') public canvas: ElementRef;
 
   @Input() public width = 1170;
-  @Input() public height = 400;
+  @Input() public height = 550;
 
   constructor(private wsclassroomService: classroomWebSocketService) {
     wsclassroomService.onWebSocket().subscribe((data: CanvasData) => {
