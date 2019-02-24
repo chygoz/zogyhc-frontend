@@ -601,7 +601,7 @@ Author URI: http://themeforest.net/user/Ansonika/
     display: inline-block;
     margin: 0;
     text-transform: uppercase;
-    font-weight: 600;
+    /* font-weight: 600; */
     letter-spacing: 2px;
     line-height: 1;
     margin-right: 20px;

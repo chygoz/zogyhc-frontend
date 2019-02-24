@@ -11,7 +11,7 @@ import { switchMap, takeUntil, pairwise } from 'rxjs/operators';
 export class TeacherComponent implements OnInit {
   @ViewChild('canvas') public canvas: ElementRef;
 
-  @Input() public width = 400;
+  @Input() public width = 1170;
   @Input() public height = 400;
 
   constructor(private teacherService: teacherWebSocketService) { 

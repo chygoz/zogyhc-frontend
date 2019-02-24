@@ -12,7 +12,7 @@ import { CanvasData } from './ws.typees';
 export class ClassroomComponent implements AfterViewInit {
   @ViewChild('classroom') public canvas: ElementRef;
 
-  @Input() public width = 400;
+  @Input() public width = 1170;
   @Input() public height = 400;
 
   constructor(private wsclassroomService: classroomWebSocketService) {
