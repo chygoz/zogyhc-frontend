@@ -4,7 +4,7 @@ ul {
 }
 .container{width:1170px;margin:0 auto;}
 .pt{padding-top:125px}
-canvas.canvas{background: #e2e2e2;border:medium none !important;margin-bottom: 15px}
+canvas.canvas{background: #e2e2e2;border:medium none !important;margin-bottom: 15px;box-shadow: 2px 2px 45px #b7b7b7;}
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
 
