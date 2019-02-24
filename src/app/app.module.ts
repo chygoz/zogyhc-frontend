@@ -18,6 +18,9 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { LayoutComponent } from './layout/layout.component';
 import { CanActivateLayout } from './layout/layout.canactivate';
 import { ConfigService } from './helper/configservice';
+import { TeacherComponent } from './teacher/teacher.component';
+import { teacherWebSocketService } from './teacher/wsteacher.component';
+import { classroomWebSocketService } from './classroom/wsclassroom.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { ConfigService } from './helper/configservice';
     LoginComponent,
     RegisterComponent,
     AdmissionComponent,
-    LayoutComponent
+    LayoutComponent,
+    TeacherComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,7 @@ import { ConfigService } from './helper/configservice';
     ReactiveFormsModule,
     OwlModule
   ],
-  providers: [CanActivateLayout,ConfigService],
+  providers: [CanActivateLayout,ConfigService, teacherWebSocketService, classroomWebSocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,29 +1,25 @@
-import { Component, Input, ElementRef, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { teacherWebSocketService } from './wsteacher.component';
 import { fromEvent } from 'rxjs';
 import { switchMap, takeUntil, pairwise } from 'rxjs/operators';
-import { classroomWebSocketService } from './wsclassroom.component';
-import { CanvasData } from './ws.typees';
 
 @Component({
-  selector: 'app-classroom',
-  templateUrl: './classroom.component.html',
-  styleUrls: ['./classroom.component.css']
+  selector: 'app-teacher',
+  templateUrl: './teacher.component.html',
+  styleUrls: ['./teacher.component.css']
 })
-export class ClassroomComponent implements AfterViewInit {
-  @ViewChild('classroom') public canvas: ElementRef;
+export class TeacherComponent implements OnInit {
+  @ViewChild('canvas') public canvas: ElementRef;
 
   @Input() public width = 400;
   @Input() public height = 400;
 
-  constructor(private wsclassroomService: classroomWebSocketService) {
-    wsclassroomService.onWebSocket().subscribe((data: CanvasData) => {
-      this.drawOnCanvas(data.prevPos, data.currentPos);
-  })
-   }
+  constructor(private teacherService: teacherWebSocketService) { 
 
-   private cx: CanvasRenderingContext2D;
+  }
+  private cx: CanvasRenderingContext2D;
 
-   public ngAfterViewInit() {
+  public ngAfterViewInit() {
     const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
     this.cx = canvasEl.getContext('2d');
 
@@ -50,18 +46,23 @@ export class ClassroomComponent implements AfterViewInit {
       })
     ).subscribe((res: [MouseEvent, MouseEvent]) => {
         const rect = canvasEl.getBoundingClientRect();
-  
+
         const prevPos = {
           x: res[0].clientX - rect.left,
           y: res[0].clientY - rect.top
         };
-  
+
         const currentPos = {
           x: res[1].clientX - rect.left,
           y: res[1].clientY - rect.top
         };
-  
-        // this.drawOnCanvas(prevPos, currentPos);
+
+        this.drawOnCanvas(prevPos, currentPos);
+
+        const lol = { prevPos, currentPos, source: 'teacher' };
+
+        this.teacherService.sendMessage(JSON.stringify(lol));
+
       });
   }
 
@@ -75,6 +76,9 @@ export class ClassroomComponent implements AfterViewInit {
       this.cx.lineTo(currentPos.x, currentPos.y);
       this.cx.stroke();
     }
+  }
+
+  ngOnInit() {
   }
 
 }
