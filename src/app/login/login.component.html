@@ -19,6 +19,7 @@
 						<label class="input_label">
 						<span class="input__label-content">Your email</span>
 					</label>
+					<span class="red" *ngIf="loginForm.hasError('pattern','email')">Please Enter Valid Email!</span>
 					</span>
 
 					<span class="input">
@@ -26,6 +27,7 @@
 						<label class="input_label">
 						<span class="input__label-content">Your password</span>
 					</label>
+					<span class="red" *ngIf="loginForm.hasError('minlength','password')">Minimum 3 Characters Required!</span>
 					</span>
 					<small><a href="">Forgot password?</a></small>
 				</div>

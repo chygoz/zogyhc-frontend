@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AbstractControl, FormControl, Validators, FormGroup, FormGroupDirective } from '@angular/forms';
 import { userService } from '../user.service';
+const valnumber = /^[0-9][0-9]*$/;
+const eml = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,7 @@ export class LoginComponent implements OnInit {
   @ViewChild(FormGroupDirective) myform;
   // For login user
   loginForm = new FormGroup({
-    email: new FormControl('', Validators.compose([Validators.minLength(3),])),
+    email: new FormControl('', Validators.pattern(eml)),
     password: new FormControl('', Validators.compose([Validators.minLength(3)]))
 });
 
