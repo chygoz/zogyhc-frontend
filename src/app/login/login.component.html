@@ -10,26 +10,26 @@
 			<figure>
 				<a href="index.html"><img src="assets/img/CHOL-LOGO2.png"  data-retina="true" alt=""></a>
 			</figure>
-			  <form>
+			  <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
 				
 				<div class="divider"><span>Login</span></div>
 				<div class="form-group">
 					<span class="input">
-					<input class="input_field" type="email" autocomplete="off" name="email">
+					<input class="input_field" type="email" autocomplete="off" required formControlName="email">
 						<label class="input_label">
 						<span class="input__label-content">Your email</span>
 					</label>
 					</span>
 
 					<span class="input">
-					<input class="input_field" type="password" autocomplete="new-password" name="password">
+					<input class="input_field" type="password" autocomplete="new-password" required formControlName="password">
 						<label class="input_label">
 						<span class="input__label-content">Your password</span>
 					</label>
 					</span>
-					<small><a href="#0">Forgot password?</a></small>
+					<small><a href="">Forgot password?</a></small>
 				</div>
-				<a class="btn_1 rounded full-width add_top_60" (click)="tempLogin()">Login to CHOL</a>
+				<button type="submit" class="btn_1 rounded full-width add_top_60" [disabled]="!loginForm.valid">Login to CHOL</button>
 				<div class="text-center add_top_10">New to CHOL? <strong><a href="admission.html">Take Admission</a></strong></div>
 			</form>
 			<div class="copy">© 2019 CHOL</div>

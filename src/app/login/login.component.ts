@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { AbstractControl, FormControl, Validators, FormGroup, FormGroupDirective } from '@angular/forms';
+import { userService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -7,11 +9,39 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  
+  @ViewChild(FormGroupDirective) myform;
+  // For login user
+  loginForm = new FormGroup({
+    email: new FormControl('', Validators.compose([Validators.minLength(3),])),
+    password: new FormControl('', Validators.compose([Validators.minLength(3)]))
+});
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: userService) { }
 
   ngOnInit() {
   }
+
+  onLoginSubmit() {
+    
+    const logindata = {
+        email: this.loginForm.get('email').value,
+        password: this.loginForm.get('password').value
+    };
+
+    
+    this.userService.login(logindata)
+        .subscribe(
+            (data) => {
+                console.log(data);
+            },
+            (err) => {
+              console.log(err);
+                
+            }
+
+        );
+}
 
   tempLogin(){
     localStorage.setItem('loggedin','true');
