@@ -11,7 +11,7 @@ const eml = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
+  loginError = '';
   @ViewChild(FormGroupDirective) myform;
   // For login user
   loginForm = new FormGroup({
@@ -36,6 +36,13 @@ export class LoginComponent implements OnInit {
         .subscribe(
             (data) => {
                 console.log(data);
+                if(data.status == true){
+                  this.loginError = '';
+                  localStorage.setItem('loggedin','true');
+                  this.router.navigateByUrl('/');
+                }else {
+                  this.loginError = data.msg;
+                }
             },
             (err) => {
               console.log(err);
