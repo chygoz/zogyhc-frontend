@@ -385,7 +385,7 @@ body{font-family: 'Poppins', sans-serif;}
   .btn_1 {
     border: none;
     color: #fff;
-    background: #3f9fff;
+    background: #f5c623;
     outline: none;
     cursor: pointer;
     display: inline-block;
@@ -3912,11 +3912,13 @@ body{font-family: 'Poppins', sans-serif;}
   #login figure, #register figure {
     text-align: center;
     margin-bottom: 30px;
-    background: #480048;
+    /* background: #480048;
     background: -webkit-linear-gradient(left, #480048, #C04848);
-    background: linear-gradient(to right, #480048, #C04848);
-    margin: -45px -60px 30px -60px;
-    padding: 20px 60px 25px 60px;
+    background: linear-gradient(to right, #480048, #C04848); */
+    /* margin: -45px -60px 30px -60px; */
+    background:#29436a;
+    padding: 20px 60px;
+    margin:0 -50%;
   }
   @media (max-width: 767px) {
     #login figure, #register figure {
@@ -3925,15 +3927,22 @@ body{font-family: 'Poppins', sans-serif;}
     }
   }
   #login aside, #register aside {
-    width: 430px;
-    padding: 45px 60px 60px 60px;
+    width: 50%;
+    /*padding: 45px 60px 60px 60px;
     position: absolute;
     left: 0;
     top: 0;
-    overflow-y: auto;
+    overflow-y: auto;*/
+     min-height: 100vh;
+     margin:0 -50px;
     background-color: #fff;
-    min-height: 100vh;
+    margin:0 auto;
+   
   }
+  .login_container{width:45%;background: #fff;}
+  .details_form{padding-top:100px;}
+  .btn_1.rounded.full-width{margin: 45px auto;background: #f5c623;font-size: 16px;color: #4a4a4a;width:inherit;}
+  .login_container .add_top_10 {margin-top: 10px;font-size: 18px;color: #989898;}
   @media (max-width: 767px) {
     #login aside, #register aside {
       width: 100%;
@@ -3941,12 +3950,12 @@ body{font-family: 'Poppins', sans-serif;}
     }
   }
   #login aside form, #register aside form {
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
     display: block;
   }
   #login aside .copy, #register aside .copy {
     text-align: center;
-    position: absolute;
+    /* position: absolute; */
     height: 30px;
     left: 0;
     bottom: 30px;
@@ -5500,6 +5509,7 @@ body{font-family: 'Poppins', sans-serif;}
     width: 100%;
     vertical-align: top;
     overflow: hidden;
+    margin-bottom:75px;
   }
   
   .input_field {
@@ -5574,11 +5584,13 @@ body{font-family: 'Poppins', sans-serif;}
   
   .input__label-content {
     display: block;
-    padding: 1.6em 0;
+    /* padding: 1.6em 0;
+    position: absolute; */
     width: 100%;
-    position: absolute;
+    font-size:18px;
+    color:#989898;
   }
-  
+  .fgtp{font-size:18px;margin-top: -50px;float: left;width: 100%;}
   .input--filled .input_label::after {
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);

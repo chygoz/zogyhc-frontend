@@ -6,18 +6,19 @@
 	<!-- End Preload -->
 	
 	<div id="login">
+		<div class="login_container">
 		<aside>
 			<figure>
 				<a href="index.html"><img src="assets/img/CHOL-LOGO2.png"  data-retina="true" alt=""></a>
 			</figure>
-			  <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+			  <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()" class="details_form">
 				
-				<div class="divider"><span>Login</span></div>
+				<!-- <div class="divider"><span>Login</span></div> -->
 				<div class="form-group">
 					<span class="input">
 					<input class="input_field" type="email" autocomplete="off" required formControlName="email">
 						<label class="input_label">
-						<span class="input__label-content">Your email</span>
+						<span class="input__label-content">Your email address</span>
 					</label>
 					<span class="red" *ngIf="loginForm.hasError('pattern','email')">Please Enter Valid Email!</span>
 					</span>
@@ -29,16 +30,17 @@
 					</label>
 					<span class="red" *ngIf="loginForm.hasError('minlength','password')">Minimum 3 Characters Required!</span>
 					</span>
-					<small><a href="">Forgot password?</a></small>
+					<a href="javascript:void(0);" class="fgtp">Forgot password?</a>
 				</div>
 				<div class="text-center">
 					<span class="red">{{loginError}}</span>
 				</div>
-				<button type="submit" class="btn_1 rounded full-width add_top_60" [disabled]="!loginForm.valid">Login to CHOL</button>
+				<button type="submit" class="btn_1 rounded full-width add_top_60" [disabled]="!loginForm.valid">Login to Classroom</button>
 				<div class="text-center add_top_10">New to CHOL? <strong><a href="admission.html">Take Admission</a></strong></div>
 			</form>
-			<div class="copy">© 2019 CHOL</div>
+			<!-- <div class="copy">© 2019 CHOL</div> -->
 		</aside>
+	    </div>
 	</div>
   <!-- /login -->
   </div>
