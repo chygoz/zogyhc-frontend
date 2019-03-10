@@ -39,19 +39,19 @@
 					</span>
 
 					<span class="input">
-					<input class="input_field" type="password" required id="password2"formControlName="password2">
+					<input class="input_field" type="password" required id="password2" formControlName="password2">
 						<label class="input_label">
 						<span class="input__label-content">Confirm password</span>
 					</label>
-					<span class="red" *ngIf="registerForm.hasError('minlength','password2')">Minimum 3 Characters Required!</span>
+					<span class="red" *ngIf="!isPasswordMatch()">Password Does not match!</span>
 					
 					</span>
 					
 					<div id="pass-info" class="clearfix"></div>
 					<span class="red">{{registerError}}</span>
 				</div>
-				{{!registerForm.valid}}
-				<button type="submit" class="btn_1 rounded full-width add_top_30" [disabled]="!registerForm.valid" >Register to CHOL</button>
+				
+				<button type="submit" class="btn_1 rounded full-width add_top_30" [disabled]="!(registerForm.valid && isPasswordMatch())" >Register to CHOL</button>
 				<div class="text-center add_top_10">Already have an acccount? <strong><a [routerLink]="['/login']">Sign In</a></strong></div>
 			</form>
 			<div class="copy">© 2019 CHOL</div>

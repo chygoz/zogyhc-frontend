@@ -10,18 +10,27 @@ const eml = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[
 })
 export class RegisterComponent implements OnInit {
   registerError = '';
+  password23 = '';
 
   registerForm = new FormGroup({
     firstName: new FormControl('', Validators.compose([Validators.minLength(3)])),
     lastName: new FormControl('', Validators.compose([Validators.minLength(3)])),
     email: new FormControl('', Validators.pattern(eml)),
     password: new FormControl('',Validators.compose([Validators.minLength(3)])),
-    password2: new FormControl('',Validators.compose([Validators.minLength(3)]))
-  })
+    password2: new FormControl('')
+  });
 
   constructor(private userService: userService) { }
 
   ngOnInit() {
+  }
+
+  isPasswordMatch(){
+    if(this.registerForm.get('password').value == this.registerForm.get('password2').value){
+      return true;
+    }else {
+      return false;
+    }
   }
 
   onRegisterSubmit(){
