@@ -8,9 +8,12 @@ import { APP_CONSTANTS } from './helper/constants';
 export class userService {
     constructor(public http: HttpClient){
 
-
     }
     login(data): Observable<any> {
         return this.http.post(APP_CONSTANTS.LOGIN_USER, data);
+    }
+    
+    register(data): Observable<any> {
+        return this.http.post(APP_CONSTANTS.REGISTER_USER, data);
     }
 }

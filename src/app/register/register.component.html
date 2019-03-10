@@ -4,47 +4,54 @@
 			<figure>
 				<a href="index.html"><img src="assets/img/CHOL-LOGO2.png"data-retina="true" alt=""></a>
 			</figure>
-			<form autocomplete="off">
+			<form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
 				<div class="form-group">
-
 					<span class="input">
-					<input class="input_field" type="text">
+					<input class="input_field" type="text" required formControlName="firstName">
 						<label class="input_label">
 						<span class="input__label-content">Your Name</span>
 					</label>
+					<span class="red" *ngIf="registerForm.hasError('minlength','firstName')">Minimum 3 Characters Required!</span>
 					</span>
 
 					<span class="input">
-					<input class="input_field" type="text">
+					<input class="input_field" type="text" required formControlName="lastName">
 						<label class="input_label">
 						<span class="input__label-content">Your Last Name</span>
 					</label>
+					<span class="red" *ngIf="registerForm.hasError('minlength','lastName')">Minimum 3 Characters Required!</span>
 					</span>
 
 					<span class="input">
-					<input class="input_field" type="email">
+					<input class="input_field" type="email" required formControlName="email" autocomplete="off">
 						<label class="input_label">
 						<span class="input__label-content">Your Email</span>
 					</label>
+					<span class="red" *ngIf="registerForm.hasError('pattern','email')">Please Enter Valid Email!</span>
 					</span>
 
 					<span class="input">
-					<input class="input_field" type="password" id="password1">
+					<input class="input_field" type="password" required id="password1" formControlName="password">
 						<label class="input_label">
 						<span class="input__label-content">Your password</span>
 					</label>
+					<span class="red" *ngIf="registerForm.hasError('minlength','password')">Minimum 3 Characters Required!</span>
 					</span>
 
 					<span class="input">
-					<input class="input_field" type="password" id="password2">
+					<input class="input_field" type="password" required id="password2"formControlName="password2">
 						<label class="input_label">
 						<span class="input__label-content">Confirm password</span>
 					</label>
+					<span class="red" *ngIf="registerForm.hasError('minlength','password2')">Minimum 3 Characters Required!</span>
+					
 					</span>
 					
 					<div id="pass-info" class="clearfix"></div>
+					<span class="red">{{registerError}}</span>
 				</div>
-				<a href="#0" class="btn_1 rounded full-width add_top_30">Register to CHOL</a>
+				{{!registerForm.valid}}
+				<button type="submit" class="btn_1 rounded full-width add_top_30" [disabled]="!registerForm.valid" >Register to CHOL</button>
 				<div class="text-center add_top_10">Already have an acccount? <strong><a [routerLink]="['/login']">Sign In</a></strong></div>
 			</form>
 			<div class="copy">© 2019 CHOL</div>
