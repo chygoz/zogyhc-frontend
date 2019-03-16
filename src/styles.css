@@ -3884,11 +3884,11 @@ body{font-family: 'Poppins', sans-serif;}
   
   /*-------- 2.5 Login/register/admission--------*/
   #login_bg, #register_bg, #admission_bg {
-    background: url(http://via.placeholder.com/1600x1067/ccc/fff/bg_login.jpg) center center no-repeat fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: url(assets/img/login.jpg) right center no-repeat fixed;
+    -webkit-background-size:65%;
+    -moz-background-size: 65%;
+    -o-background-size: 65%;
+    background-size: 65%;
     min-height: 100vh;
     width: 100%;
   }
