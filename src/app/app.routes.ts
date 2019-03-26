@@ -45,6 +45,14 @@ const AppRoutes: Routes = [
             {path:'', component: ClassroomComponent}
         ]
     },
+    {
+        path: 'aboutus',
+        component: LayoutComponent,
+        canActivate: [CanActivateLayout],
+        children: [
+            {path:'', component: AboutUsComponent}
+        ]
+    },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'admission', component: AdmissionComponent },

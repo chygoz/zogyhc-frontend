@@ -7,3 +7,8 @@ header{padding: 0;}
 ul#top_menu{margin: 0;padding-right: 45px}
 ul#top_menu li a {font-size: 18px;padding: 45px 0;display: inline-block;}
 ul#top_menu li a.btn_1{padding: 13px 30px !important}
+
+@media (max-width: 767px) { 
+    ul#top_menu li a  { padding: 0px;}
+    ul#top_menu{ padding-top: 15px;}
+}
